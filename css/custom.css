@@ -1,0 +1,49 @@
+body {
+    background: url('../img/bg.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus, .navbar-nav > li > a{
+    color: #ffffff;
+    background: transparent none;
+}
+
+.navbar-brand{
+    color: #ffffff;
+}
+
+.navbar-brand:hover{
+    color:#ffffff;
+    cursor: default;
+}
+
+#user-list{
+    display: none;
+    position: fixed;
+    top:50%;
+    left:50%;
+}
+
+.user{
+    padding: 10px 10px 10px 10px;
+    margin-left:-60px;
+}
+
+.user-image{
+    cursor: pointer;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+}
+
+.user-image:hover {
+
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    transform: scale(1.2);
+}
