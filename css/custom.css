@@ -1,3 +1,8 @@
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
 body {
     background: url('../img/bg.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -22,17 +27,15 @@ body {
 
 #user-list{
     display: none;
-    position: fixed;
-    top:50%;
-    left:50%;
 }
 
 .user{
     padding: 10px 10px 10px 10px;
-    margin-left:-60px;
 }
 
 .user-image{
+    width: 120px;
+    height: 120px;
     cursor: pointer;
     -webkit-transition: all .2s ease-in-out;
     -moz-transition: all .2s ease-in-out;
@@ -46,4 +49,39 @@ body {
     -moz-transform: scale(1.2);
     -o-transform: scale(1.2);
     transform: scale(1.2);
+}
+
+p{
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color:white;
+    font-weight: bold;
+}
+
+#mdm-message{
+    display: none;
+}
+
+/** Center stuff **/
+
+.vertical-center {
+    height:100%;
+    width:100%;
+
+    text-align: center;  /* align the inline(-block) elements horizontally */
+    font: 0/0 a;         /* remove the gap between inline(-block) elements */
+}
+
+.vertical-center:before {    /* create a full-height inline block pseudo=element */
+    content: ' ';
+    display: inline-block;
+    vertical-align: middle;  /* vertical alignment of the inline element */
+    height: 100%;
+}
+
+.vertical-center > .container {
+    max-width: 100%;
+
+    display: inline-block;
+    vertical-align: middle;  /* vertical alignment of the inline element */
+    font: 16px/1 "Helvetica Neue", Helvetica, Arial, sans-serif;        /* <-- reset the font property */
 }
