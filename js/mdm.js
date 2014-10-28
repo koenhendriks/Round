@@ -24,7 +24,7 @@ function mdm_add_user(username, gecos, status) {
 
 
 
-    var user = '<input type="password" class="input-lg password" id="'+username+'-password" name="password" />'+
+    var user = '<input type="password" class="input-lg password" id="'+username+'-password" name="password" onkeypress="if (event.keyCode==13){ send_login()}"/>'+
         '<div class="row user" >'+
             '<div class="col-lg-12" id="'+username+'">'+
             '</div>'+
@@ -35,28 +35,6 @@ function mdm_add_user(username, gecos, status) {
 
     cUsers++;
     fadeUsers();
-}
-
-/**
- * Send the login data
- *
- * @returns {boolean}
- */
-function send_login() {
-
-    var password = document.getElementById("password").value;
-
-    if (username == "" && password == "") {
-        mdm_error("Please input valid login info.");
-    } else if (username == "") {
-        mdm_error("Please input a valid username.");
-    } else if (password == "") {
-        mdm_error("Please input a valid password.");
-    } else {
-        alert("LOGIN###" + password);
-    }
-
-    return false;
 }
 
 /**
@@ -179,6 +157,17 @@ function mdm_enable(){
  */
 function mdm_disable(){
     $('.password').attr('disabled','disabled');
+}
+
+/**
+ * Input password for mdm
+ * @param message
+ */
+function mdm_noecho(message) {
+    mdm_enable();
+    //this one        document.getElementById("label").innerHTML = message;
+    document.getElementById(username+'-password').value = "";
+    document.getElementById(username+'-password').focus();
 }
 
 /**

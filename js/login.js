@@ -4,8 +4,10 @@
 getDate();
 var cUsers = 0;
 var open = false;
+
+
 /**
- * Sets the date in left top corner
+ * Sets the date in left top corner with custom format
  */
 function getDate(){
     var faCal = '<i class="fa fa-calendar-o"></i> ';
@@ -20,8 +22,14 @@ function getDate(){
     document.getElementById('date-header').innerHTML = faCal + d +' '+date+' '+ month;
 }
 
+/**
+ * Action called when clicked on image.
+ *
+ * @param self
+ */
 function userClick(self){
     username = $(self).attr('username');
+    alert("USER###" + username);
 
     if(open == false){
         open = username;
@@ -49,7 +57,32 @@ function userClick(self){
     }
    }
 
+/**
+ * Fade in users
+ */
 function fadeUsers(){
     var userList = $('#user-list');
     userList.fadeIn(2000);
+}
+
+/**
+ * Send the login data
+ *
+ * @returns {boolean}
+ */
+function send_login() {
+
+    var password = document.getElementById(username+"-password").value;
+
+    if (username == "" && password == "") {
+        mdm_error("Please input valid login info.");
+    } else if (username == "") {
+        mdm_error("Please choose a valid user.");
+    } else if (password == "") {
+        mdm_error("Please input a valid password.");
+    } else {
+        alert("LOGIN###" + password);
+    }
+
+    return false;
 }
