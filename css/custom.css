@@ -26,6 +26,7 @@ body {
 }
 
 #user-list{
+    margin-bottom: 95px;
     display: none;
 }
 
@@ -61,12 +62,30 @@ p{
     display: none;
 }
 
+#error-container{
+    display: none;
+}
+
+.ul-right{
+    margin-right: 15px;
+}
+
+.transparent{
+    color:#ffffff !important;
+    background: transparent none;
+}
+
+.password{
+    position: absolute;
+    margin-top: 37px;
+    display: none;
+    z-index: 5;
+}
 /** Center stuff **/
 
 .vertical-center {
     height:100%;
     width:100%;
-
     text-align: center;  /* align the inline(-block) elements horizontally */
     font: 0/0 a;         /* remove the gap between inline(-block) elements */
 }

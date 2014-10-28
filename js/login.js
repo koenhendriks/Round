@@ -20,9 +20,16 @@ function getDate(){
 }
 
 function userClick(self){
-    console.log($(self).attr('username'));
-    mdm_msg('Please insert your password');
+
+    //Reset open users.
+    $('.password').fadeOut();
+    $('.user-image').css('margin-right', '0px');
+
+    //Open clicked one
+    username = $(self).attr('username');
     $('#mdm-message').show();
+    $(self).css('margin-right', '350px');
+    $('#'+username+'-password').fadeIn();
 }
 
 function fadeUsers(){
