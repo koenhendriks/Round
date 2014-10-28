@@ -4,7 +4,7 @@
 getDate();
 var cUsers = 0;
 var open = false;
-
+var finalUser;
 
 /**
  * Sets the date in left top corner with custom format
@@ -29,7 +29,9 @@ function getDate(){
  */
 function userClick(self){
     username = $(self).attr('username');
-    alert("USER###" + username);
+
+    finalUser = username;
+    alert("USER###" + finalUser);
 
     if(open == false){
         open = username;
@@ -40,7 +42,7 @@ function userClick(self){
             opacity: 0,
             display: 'inline-block'
         }).animate({opacity:1},600);
-    }else if(open != username){
+    }else {
 
         $('#'+open+'-password').fadeOut(400, function() {
             $('#'+open+'-password').val('');
@@ -72,7 +74,12 @@ function fadeUsers(){
  */
 function send_login() {
 
-    var password = document.getElementById(username+"-password").value;
+    $('#'+finalUser+'-password').fadeOut(400, function() {
+        $('#' + finalUser + '-password').val('');
+        $('#' + finalUser + '-image').css('margin-right', '0px');
+    });
+
+    var password = document.getElementById(finalUser+"-password").value;
 
     if (username == "" && password == "") {
         mdm_error("Please input valid login info.");
