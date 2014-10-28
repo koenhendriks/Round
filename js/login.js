@@ -3,6 +3,7 @@
  */
 getDate();
 var cUsers = 0;
+var open = false;
 /**
  * Sets the date in left top corner
  */
@@ -21,16 +22,35 @@ function getDate(){
 
 function userClick(self){
 
-    //Reset open users.
-    $('.password').fadeOut();
-    $('.user-image').css('margin-right', '0px');
-
-    //Open clicked one
     username = $(self).attr('username');
-    $('#mdm-message').show();
-    $(self).css('margin-right', '350px');
-    $('#'+username+'-password').fadeIn();
-}
+
+    if(open == false){
+        open = username;
+
+        //Open clicked one
+        $('#mdm-message').show();
+        $(self).css('margin-right', '350px');
+        $('#'+username+'-password').css({
+            opacity: 0,
+            display: 'inline-block'
+        }).animate({opacity:1},600);
+    }else if(open != username){
+
+        $('#'+open+'-password').fadeOut(400, function() {
+            $('#'+open+'-password').val('');
+            $('#'+open+'-image').css('margin-right', '0px');
+
+            //Open clicked one
+            $('#mdm-message').show();
+            $(self).css('margin-right', '350px');
+            $('#'+username+'-password').css({
+                opacity: 0,
+                display: 'inline-block'
+            }).animate({opacity:1},600);
+            open = username;
+        });
+    }
+   }
 
 function fadeUsers(){
     var userList = $('#user-list');

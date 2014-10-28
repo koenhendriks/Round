@@ -20,12 +20,14 @@ function mdm_add_user(username, gecos, status) {
     //picture.setAttribute('onerror', "this.src='file:///usr/share/pixmaps/nobody.png';");d
     picture.setAttribute('username', username);
     picture.setAttribute('onclick', 'userClick(this)');
+    picture.setAttribute('id', username+'-image');
 
-    var user = '<div class="row user" >'+
 
-        '<input type="password" class="input-lg password" id="'+username+'-password" name="password" />'+
-        '<div class="col-lg-12" id="'+username+'">'+
-        '</div>'+
+
+    var user = '<input type="password" class="input-lg password" id="'+username+'-password" name="password" />'+
+        '<div class="row user" >'+
+            '<div class="col-lg-12" id="'+username+'">'+
+            '</div>'+
         '</div>';
 
     $('#user-list').append(user);
