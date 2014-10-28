@@ -21,14 +21,12 @@ function getDate(){
 }
 
 function userClick(self){
-
     username = $(self).attr('username');
 
     if(open == false){
         open = username;
 
         //Open clicked one
-        $('#mdm-message').show();
         $(self).css('margin-right', '350px');
         $('#'+username+'-password').css({
             opacity: 0,
@@ -41,7 +39,6 @@ function userClick(self){
             $('#'+open+'-image').css('margin-right', '0px');
 
             //Open clicked one
-            $('#mdm-message').show();
             $(self).css('margin-right', '350px');
             $('#'+username+'-password').css({
                 opacity: 0,

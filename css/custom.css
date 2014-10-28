@@ -66,8 +66,8 @@ p{
     display: none;
 }
 
-.ul-right{
-    margin-right: 15px;
+.ul-top{
+    margin-top: 10px;
 }
 
 .transparent{
@@ -80,6 +80,8 @@ p{
     margin-top: 37px;
     display: none;
     z-index: 5;
+    border: 3px solid cyan;
+    background-color: #ceecfa;
 }
 /** Center stuff **/
 

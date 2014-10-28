@@ -15,9 +15,9 @@ function mdm_add_user(username, gecos, status) {
 
     var picture = document.createElement('img');
     picture.setAttribute('class', "img-circle user-image");
-    //picture.setAttribute('src', "file:///home/"+username+"/.face");
-    picture.setAttribute('src', "http://placehold.it/120x120");
-    //picture.setAttribute('onerror', "this.src='file:///usr/share/pixmaps/nobody.png';");d
+    picture.setAttribute('src', "file:///home/"+username+"/.face");
+    //picture.setAttribute('src', "http://placehold.it/120x120");
+    picture.setAttribute('onerror', "this.src='file:///usr/share/pixmaps/nobody.png';");
     picture.setAttribute('username', username);
     picture.setAttribute('onclick', 'userClick(this)');
     picture.setAttribute('id', username+'-image');
@@ -64,6 +64,21 @@ function send_login() {
  *
  * @param message
  */
+function mdm_timed(message) {
+    if (message != "") {
+        document.getElementById("error-container").style.display = 'block';
+    }
+    else {
+        document.getElementById("error-container").style.display = 'none';
+    }
+    document.getElementById("error").innerHTML = message;
+}
+
+/**
+ * Sets an error
+ *
+ * @param message
+ */
 function mdm_error(message) {
     if (message != "") {
         document.getElementById("error-container").style.display = 'block';
@@ -89,7 +104,18 @@ function set_clock(data){
  * @param message
  */
 function set_welcome_message(message){
-    //console.log("\n "+ message);
+    if (message != "") {
+        document.getElementById("mdm-welcome").style.display = 'block';
+    }
+    else {
+        document.getElementById("mdm-welcome").style.display = 'none';
+    }
+
+    if(message == 'Please enter your username') {
+        message = 'Please click the desired user.';
+    }
+
+    document.getElementById("mdm-welcome").innerHTML = message;
 }
 
 /**
@@ -142,6 +168,20 @@ function mdm_hide_restart() {
 }
 
 /**
+ * Enable password field
+ */
+function mdm_enable(){
+    $('.password').removeAttr('disabled');
+}
+
+/**
+ * Disable password field
+ */
+function mdm_disable(){
+    $('.password').attr('disabled','disabled');
+}
+
+/**
  * Add sessions to the page
  *
  * @param session_name
@@ -150,11 +190,6 @@ function mdm_hide_restart() {
 function mdm_add_session(session_name, session_file) {
 
     session_name = session_name.replace("Ubuntu", "Unity");
-
-    var filename = session_name.toLowerCase();
-    filename = filename.replace(/ /g, "-");
-    filename = filename.replace(/\(/g, "");
-    filename = filename.replace(/\)/g, "");
 
     var li = document.createElement('li');
 
@@ -170,6 +205,19 @@ function mdm_add_session(session_name, session_file) {
     src.appendChild(li);
 }
 
-mdm_add_user('test','test');
-mdm_add_user('test2','test2');
-mdm_add_user('test3','test3');
+/**
+ * Action called on selected session
+ *
+ * @param session_name
+ * @param session_file
+ */
+function select_session(session_name, session_file) {
+    $('#session-button').html(session_name+' <span class="caret"></span>');
+}
+
+function mdm_add_language(){
+    //@@TODO create language support
+}
+//mdm_add_user('test','test');
+//mdm_add_user('test2','test2');
+//mdm_add_user('test3','test3');

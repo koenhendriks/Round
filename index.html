@@ -24,6 +24,16 @@
     <div class="col-lg-6">
         <div class="pull-right">
             <ul class="nav navbar-nav text-right">
+                <li class="ul-top">
+                    <div class="dropdown transparent text-center">
+                        <button class="btn btn-default dropdown-toggle transparent" type="button" id="session-button" data-toggle="dropdown">
+                            $selectsession
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu transparent" id="sessions" role="menu" aria-labelledby="dropdownMenu1">
+                        </ul>
+                    </div>
+                </li>
                 <li>
                     <a href="#" id="shutdown" onclick="alert('SHUTDOWN###');"><i class="fa fa-power-off"></i> Shutdown</a>
                 </li>
@@ -43,7 +53,7 @@
     <div class="col-lg-6">
         <ul class="nav navbar-nav text-center" id="error-container">
             <li>
-                <a href="#"> <i class="fa fa-exclamation"></i> </a>
+                <a href="#"> <i class="fa fa-exclamation-circle"></i> </a>
             </li>
             <li>
                 <a class="navbar-brand text-warning" id="error" href="#">Error</a>
@@ -53,18 +63,8 @@
 
     <div class="col-lg-6">
         <div class="pull-right">
-            <ul class="nav navbar-nav text-right ul-right transparent">
-                <li>
-                    <div class="dropdown transparent">
-                        <button class="btn btn-default dropdown-toggle transparent" type="button" id="dropdownMenu1" data-toggle="dropdown">
-                            $selectsession
-                            <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu transparent" role="menu" aria-labelledby="dropdownMenu1">
-                            <li role="presentation" class="transparent"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
-                        </ul>
-                    </div>
-                </li>
+            <ul class="nav navbar-nav text-right transparent">
+                <li><a href="#" class="navbar-brand" id="mdm-welcome"></a></li>
             </ul>
         </div>
     </div>
