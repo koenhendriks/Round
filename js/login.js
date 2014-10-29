@@ -93,3 +93,5 @@ function send_login() {
 
     return false;
 }
+
+console.log($('.get-height').height());
