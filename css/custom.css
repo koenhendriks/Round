@@ -83,7 +83,7 @@ p{
     border: 3px solid cyan;
     background-color: #ceecfa;
 }
-/** Center stuff **/
+/** Center and fixed positioning **/
 
 .vertical-center {
     height:100%;
@@ -105,4 +105,16 @@ p{
     display: inline-block;
     vertical-align: middle;  /* vertical alignment of the inline element */
     font: 16px/1 "Helvetica Neue", Helvetica, Arial, sans-serif;        /* <-- reset the font property */
+}
+
+#fixed-sessions{
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+}
+
+#fixed-languages{
+    position: fixed;
+    left: 15px;
+    bottom: 15px;
 }

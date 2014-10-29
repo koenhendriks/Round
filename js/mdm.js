@@ -204,8 +204,37 @@ function select_session(session_name, session_file) {
     $('#session-button').html(session_name+' <span class="caret"></span>');
 }
 
-function mdm_add_language(){
-    //@@TODO create language support
+/**
+ * Fills the language drop down
+ *
+ * @param par
+ * @param param
+ * @param pardar
+ */
+function mdm_add_language(language_name, language_code){
+
+    var li = document.createElement('li');
+
+    var link = document.createElement('a');
+    link.setAttribute('href', "javascript:alert('LANGUAGE###"+language_code+"');set_current_language('"+language_name+"','"+language_code+"');");
+
+   var name_div = document.createTextNode(language_name);
+
+    li.appendChild(link);
+    link.appendChild(name_div);
+
+    var src = document.getElementById("languages");
+    src.appendChild(li);
+}
+
+/**
+ * Action when current language is set
+ *
+ * @param language_name
+ * @param language_code
+ */
+function set_current_language(language_name, language_code){
+    $('#language-button').html(language_name+' <span class="caret"></span>');
 }
 //mdm_add_user('test','test');
 //mdm_add_user('test2','test2');

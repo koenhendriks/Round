@@ -24,16 +24,6 @@
     <div class="col-lg-6">
         <div class="pull-right">
             <ul class="nav navbar-nav text-right">
-                <li class="ul-top">
-                    <div class="dropdown transparent text-center">
-                        <button class="btn btn-default dropdown-toggle transparent" type="button" id="session-button" data-toggle="dropdown">
-                            $selectsession
-                            <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu transparent" id="sessions" role="menu" aria-labelledby="dropdownMenu1">
-                        </ul>
-                    </div>
-                </li>
                 <li>
                     <a href="#" id="shutdown" onclick="alert('SHUTDOWN###');"><i class="fa fa-power-off"></i> Shutdown</a>
                 </li>
@@ -83,6 +73,27 @@
     </div>
 </div>
 
+<div id="fixed-sessions">
+    <div class="dropdown dropup transparent text-center">
+        <button class="btn btn-default dropdown-toggle transparent" type="button" id="session-button" data-toggle="dropdown">
+            $selectsession
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu transparent" id="sessions" role="menu" aria-labelledby="session-button">
+        </ul>
+    </div>
+</div>
+
+<div id="fixed-languages">
+    <div class="dropdown dropup transparent text-center">
+        <button class="btn btn-default dropdown-toggle transparent" type="button" id="language-button" data-toggle="dropdown">
+            $selectlanguage
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu transparent" id="languages" role="menu" aria-labelledby="language-button">
+        </ul>
+    </div>
+</div>
 <!-- jQuery Version 1.11.0 -->
 <script src="js/jquery-1.11.1.min.js" type="text/javascript"></script>
 
