@@ -42,7 +42,7 @@ It depends on your system, but here's how to install for Linux Mint:
 
     ```bash
     $ sudo git clone https://github.com/koenhendriks/mdm-login.git \
-      /usr/share/mdm/html-themes/mdm-html-gtheme
+      /usr/share/mdm/html-themes/Round
     ```
 4. Open up the preferences panel and select the theme from the HTML list:
 
